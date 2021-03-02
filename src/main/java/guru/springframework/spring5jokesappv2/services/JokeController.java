@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-//SPRING MVC CONTROLLER
+//SPRING MVC CONTROLLER managed by spring
 @Controller
 public class JokeController {
 
@@ -23,18 +23,19 @@ public class JokeController {
     public JokeController(JokeService jokeService) {
         this.jokeService = jokeService;
     }
-
     /* showJoke - the controller method.
      * This method is going to get invoked when we come into the
      * context that we have to request mapping
      *
      * RequestMapping is provided by the spring-boot-starter-web
      *
-     * Model is part of the ui library,
+     * NOTE: When using controller interfaces (e.g. for AOP proxying), make sure to
+     * consistently put all your mapping annotations - such as @RequestMapping and
+     * @SessionAttributes - on the controller interface rather than on the implementation class.
      *
-     *
+     * value = -- is optional
      */
-    @RequestMapping({"/", " "})
+    @RequestMapping(value = {"/joke", "/", " ", "/another-path"})
     public String showJoke(Model model) {
         model.addAttribute("joke", jokeService.getJoke());
         return "index";
