@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-staWrter-parent</artifactId>
+		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
@@ -12,7 +12,7 @@
 	<artifactId>spring5-jokes-app-v2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring5-jokes-app-v2</name>
-	<description>Jokes generator </description>
+	<description>Jokes generator</description>
 	<properties>
 		<java.version>15</java.version>
 	</properties>
